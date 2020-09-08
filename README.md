@@ -15,7 +15,7 @@ Projeto feito com a utilização da api de [PokéAPI](https://pokeapi.co/) para 
 
 ##### Resultado
 
-![]()
+![](https://github.com/NiksonDiniz/variosProjetos/blob/master/imagensDosProjetos/projetoPokedex.PNG)
 
 ##### 🚀 Como rodar este projeto
 
