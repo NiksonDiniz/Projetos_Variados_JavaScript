@@ -23,6 +23,8 @@ Projeto feito com a utilização da api de [PokéAPI](https://pokeapi.co/) para 
 
 Projeto de controle financeiro desenvolvido com JavaScript puro.
 
+Nesse projeto aprendi a utilizar os métodos reduce, filter, map, push, forEach.
+
 ##### Tecnologias
 
 1. HTML
