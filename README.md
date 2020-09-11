@@ -2,7 +2,7 @@
 
 
 
-### :pager:Pokedex
+### :pager: Projeto 01 - Pokedex
 
 Projeto feito com a utilização da api de [PokéAPI](https://pokeapi.co/) para busca de dados e https://pokeres.bastionbot.org/ para utilização de imagens com melhor qualidade.
 
@@ -16,6 +16,28 @@ Projeto feito com a utilização da api de [PokéAPI](https://pokeapi.co/) para 
 ##### Resultado
 
 ![](https://github.com/NiksonDiniz/variosProjetos/blob/master/imagensDosProjetos/projetoPokedex.PNG)
+
+------
+
+### :dollar:Projeto 02 - Controle Financeiro
+
+Projeto de controle financeiro desenvolvido com JavaScript puro.
+
+##### Tecnologias
+
+1. HTML
+2. CSS
+3. JavaScript
+
+##### Resultado
+
+![](https://github.com/NiksonDiniz/variosProjetos/blob/master/imagensDosProjetos/controleFinanceiro.PNG)
+
+------
+
+
+
+
 
 ##### 🚀 Como rodar este projeto
 
