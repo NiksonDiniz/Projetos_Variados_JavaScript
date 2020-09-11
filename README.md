@@ -31,7 +31,7 @@ Projeto de controle financeiro desenvolvido com JavaScript puro.
 
 ##### Resultado
 
-![](https://github.com/NiksonDiniz/variosProjetos/blob/master/imagensDosProjetos/controleFinanceiro.PNG)
+![](https://github.com/NiksonDiniz/variosProjetos/blob/master/imagensDosProjetos/controleFinanceiro.png)
 
 ------
 
