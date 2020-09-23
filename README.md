@@ -37,7 +37,22 @@ Nesse projeto aprendi a utilizar os métodos reduce, filter, map, push, forEach.
 
 ------
 
+### :speaker:Projeto 03 - Leitor de texto com voz
 
+Projeto de leitor de texto com opção de voz selecionável com JavaScript.
+
+Nesse projeto aprendi a utilizar a [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API).
+
+##### Tecnologias
+
+1. HTML
+2. CSS
+3. JavaScript
+4. Web Speech API
+
+##### Resultado
+
+![](https://github.com/NiksonDiniz/variosProjetos/blob/master/imagensDosProjetos/Leitor.png)
 
 
 
