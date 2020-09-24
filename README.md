@@ -61,7 +61,7 @@ Calculadora simples feita em javascript.
 
 ##### 🎨Resultado
 
-![](https://github.com/NiksonDiniz/variosProjetos/blob/master/imagensDosProjetos/calculadorajs.gif)
+![](https://github.com/NiksonDiniz/Projetos_Variados_JavaScript/blob/master/imagensDosProjetos/calculadoraJS.gif)
 
 ------
 
