@@ -14,7 +14,7 @@ Projeto feito com a utilização da api de [PokéAPI](https://pokeapi.co/) para 
 
 #### 🎨Resultado
 
-![](https://github.com/NiksonDiniz/variosProjetos/blob/master/imagensDosProjetos/projetoPokedex.PNG)
+![](https://github.com/NiksonDiniz/variosProjetos/blob/master/imagensDosProjetos/projetoPokedex.gif)
 
 ------
 
@@ -32,7 +32,7 @@ Nesse projeto aprendi a utilizar os métodos reduce, filter, map, push, forEach.
 
 #### 🎨Resultado
 
-![](https://github.com/NiksonDiniz/variosProjetos/blob/master/imagensDosProjetos/controleFinanceiro.png)
+![](https://github.com/NiksonDiniz/variosProjetos/blob/master/imagensDosProjetos/controleFinanceiro.gif)
 
 ------
 
@@ -51,7 +51,7 @@ Nesse projeto aprendi a utilizar a [Web Speech API](https://developer.mozilla.or
 
 ##### 🎨Resultado
 
-![](https://github.com/NiksonDiniz/variosProjetos/blob/master/imagensDosProjetos/Leitor.png)
+![](https://github.com/NiksonDiniz/variosProjetos/blob/master/imagensDosProjetos/Leitor.gif)
 
 ------
 

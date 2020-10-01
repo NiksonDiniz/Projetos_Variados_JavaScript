@@ -1,129 +1,135 @@
 // Api SpeechSynthesis
-const main = document.querySelector('main')
-const buttonInsertText = document.querySelector('.btn-toggle')
-const buttonReadText = document.querySelector('#read')
-const divTextBox = document.querySelector('.text-box')
-const closeDivTextBox = document.querySelector('.close')
-const selecElement = document.querySelector('select')
-const textArea = document.querySelector('textarea')
-
-
+const main = document.querySelector("main");
+const buttonInsertText = document.querySelector(".btn-toggle");
+const buttonReadText = document.querySelector("#read");
+const divTextBox = document.querySelector(".text-box");
+const closeDivTextBox = document.querySelector(".close");
+const selecElement = document.querySelector("select");
+const textArea = document.querySelector("textarea");
 
 const humanExpressions = [
-    { img: './img/drink.jpg', text: 'Estou com sede'},
-    { img: './img/food.jpg', text: 'Estou com fome'},
-    { img: './img/tired.jpg', text: 'Estou cansado'},
-    { img: './img/hurt.jpg', text: 'Estou machucado'},
-    { img: './img/happy.jpg', text: 'Estou feliz'},
-    { img: './img/angry.jpg', text: 'Estou com raiva'},
-    { img: './img/sad.jpg', text: 'Estou triste'},
-    { img: './img/scared.jpg', text: 'Estou assustado'},
-    { img: './img/outside.jpg', text: 'Quero  ir lá fora'},
-    { img: './img/home.jpg', text: 'Quero ir pra casa'},
-    { img: './img/school.jpg', text: 'Quero ir para a escola'},
-    { img: './img/grandma.jpg', text: 'Quero ver a vovó'},
-]
+  { img: "./img/drink.jpg", text: "Estou com sede" },
+  { img: "./img/food.jpg", text: "Estou com fome" },
+  { img: "./img/tired.jpg", text: "Estou cansado" },
+  { img: "./img/hurt.jpg", text: "Estou machucado" },
+  { img: "./img/happy.jpg", text: "Estou feliz" },
+  { img: "./img/angry.jpg", text: "Estou com raiva" },
+  { img: "./img/sad.jpg", text: "Estou triste" },
+  { img: "./img/scared.jpg", text: "Estou assustado" },
+  { img: "./img/outside.jpg", text: "Quero  ir lá fora" },
+  { img: "./img/home.jpg", text: "Quero ir pra casa" },
+  { img: "./img/school.jpg", text: "Quero ir para a escola" },
+  { img: "./img/grandma.jpg", text: "Quero ver a vovó" },
+];
 
-const utterance = new SpeechSynthesisUtterance()
+const utterance = new SpeechSynthesisUtterance();
 
-const setTextMessage =  text => {
-    utterance.text = text
-}
+const setTextMessage = (text) => {
+  utterance.text = text;
+};
 
 const speakText = () => {
-    speechSynthesis.speak(utterance)
-}
+  speechSynthesis.speak(utterance);
+};
 
-const setVoice = event => {
-    const selectedVoice = voices.find(voice => voice.name === event.target.value)
-    utterance.voice = selectedVoice
-}
+const setVoice = (event) => {
+  const selectedVoice = voices.find(
+    (voice) => voice.name === event.target.value
+  );
+  utterance.voice = selectedVoice;
+};
 
 const addExpressionBoxesIntoDOM = () => {
-    main.innerHTML = humanExpressions.map(({ img, text }) => 
+  main.innerHTML = humanExpressions
+    .map(
+      ({ img, text }) =>
         `
             <div class="expression-box" data-js="${text}">
                 <img src="${img}" alt="${text}" data-js="${text}">
                 <p class="info" data-js="${text}">${text}</p>
             </div>
         `
-    ).join(' ')
-}
+    )
+    .join(" ");
+};
 
-addExpressionBoxesIntoDOM()
+addExpressionBoxesIntoDOM();
 
-const setStyleOfClickedDiv = dataValue => {
-    const div = document.querySelector(`[data-js="${dataValue}"]`)
+const setStyleOfClickedDiv = (dataValue) => {
+  const div = document.querySelector(`[data-js="${dataValue}"]`);
 
-    div.classList.add('active')
-    setTimeout(() => {
-        div.classList.remove('active')
-    }, 1000)
-}
+  div.classList.add("active");
+  setTimeout(() => {
+    div.classList.remove("active");
+  }, 1000);
+};
 
-main.addEventListener('click', event => {
-    const clickedElement = event.target
-    const clickedElementText = clickedElement.dataset.js
-    const clickedElementTextMustBeSpoken = ['img', 'p'].some(elementName =>
-        clickedElement.tagName.toLowerCase() === elementName.toLocaleLowerCase())
+main.addEventListener("click", (event) => {
+  const clickedElement = event.target;
+  const clickedElementText = clickedElement.dataset.js;
+  const clickedElementTextMustBeSpoken = ["img", "p"].some(
+    (elementName) =>
+      clickedElement.tagName.toLowerCase() === elementName.toLocaleLowerCase()
+  );
 
-    if(clickedElementTextMustBeSpoken){
-        setTextMessage(clickedElementText)
-        speakText()
-        setStyleOfClickedDiv(clickedElementText)
-    }
+  if (clickedElementTextMustBeSpoken) {
+    setTextMessage(clickedElementText);
+    speakText();
+    setStyleOfClickedDiv(clickedElementText);
+  }
+});
 
-})
+const insertOptionElementsIntoDOM = (voices) => {
+  selecElement.innerHTML = voices.reduce((accumulator, { name, lang }) => {
+    accumulator += `<option value="${name}">${lang} | ${name}</option>`;
+    return accumulator;
+  }, "");
+};
 
-const insertOptionElementsIntoDOM = voices => {
-    selecElement.innerHTML = voices.reduce((accumulator, { name, lang }) => {
-        accumulator += `<option value="${name}">${lang} | ${name}</option>`
-        return accumulator
-    }, '')
+const setUtteranceVoice = (voices) => {
+  utterance.voice = voice;
+  const voiceOptionElement = selecElement.querySelector(
+    `[value="${voice.name}"]`
+  );
 
-}
+  voiceOptionElement.selected = true;
+};
 
-const setUtteranceVoice = voices => {
-    utterance.voice = voice
-    const voiceOptionElement = selecElement
-        .querySelector(`[value="${voice.name}"]`)
+const setPTBRvoices = (voices) => {
+  const googleVoice = voices.find(
+    (voice) => voice.name === "Google português do Brasil"
+  );
+  const microsoftVoice = voices.find(
+    (voice) => voice.name === "Google UK English Male"
+  );
 
-    voiceOptionElement.selected  = true
-}
+  if (googleVoice) {
+    setUtteranceVoice(googleVoice);
+  } else if (microsoftVoice) {
+    setUtteranceVoice(microsoftVoice);
+  }
+};
 
-const setPTBRvoices = voices => {
-    const googleVoice = voices.find(voice => voice.name === 'Google português do Brasil')
-    const microsoftVoice = voices.find(voice => voice.name === 'Google UK English Male')
+let voices = [];
 
-    if(googleVoice) {
-        setUtteranceVoice(googleVoice)
-    }else if (microsoftVoice) {
-        setUtteranceVoice(microsoftVoice)
-    }
-}
+speechSynthesis.addEventListener("voiceschanged", () => {
+  voices = speechSynthesis.getVoices();
 
-let voices = []
+  insertOptionElementsIntoDOM(voices);
+  setPTBRvoices(voices);
+});
 
-speechSynthesis.addEventListener('voiceschanged', () => {
-    voices = speechSynthesis.getVoices()
+buttonInsertText.addEventListener("click", () => {
+  divTextBox.classList.add("show");
+});
 
-    insertOptionElementsIntoDOM(voices)
-    setPTBRvoices(voices)
+closeDivTextBox.addEventListener("click", () => {
+  divTextBox.classList.remove("show");
+});
 
+selecElement.addEventListener("change", setVoice);
 
-})
-
-buttonInsertText.addEventListener('click', () => {
-    divTextBox.classList.add('show')
-})
-
-closeDivTextBox.addEventListener('click', () => {
-    divTextBox.classList.remove('show')
-})
-
-selecElement.addEventListener('change', setVoice)
-
-buttonReadText.addEventListener('click', () => {
-    setTextMessage(textArea.value)
-    speakText()
-})
+buttonReadText.addEventListener("click", () => {
+  setTextMessage(textArea.value);
+  speakText();
+});

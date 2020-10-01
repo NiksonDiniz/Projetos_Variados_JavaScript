@@ -4,7 +4,7 @@ const generatePokemonPromises = () =>
   Array(150)
     .fill()
     .map((_, index) =>
-      fetch(getPokemonUrl(index + 1)).then((response) => response.json()),
+      fetch(getPokemonUrl(index + 1)).then((response) => response.json())
     );
 
 const generateHTML = (pokemons) => {
