@@ -1,4 +1,4 @@
-# :trophy:Projetos Variados Para estudo:trophy:
+# :trophy:Projetos Variados:trophy:
 
 
 
